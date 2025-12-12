@@ -3,143 +3,229 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sai Sivaraman — Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Sai Sivaraman — Professional Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0f14; --card:#0f1720; --muted:#9aa4b2; --accent:#00d1ff; --accent2:#7c4dff;
-      --glass: rgba(255,255,255,0.03);
+      --bg:#f6f8fb; --card:#ffffff; --muted:#6b7280; 
+      --accent:#0b6ef6; --accent-2:#0a9df0;
+      --glass: rgba(11,110,246,0.06);
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e6eef6;background:linear-gradient(180deg,#02040a 0%, #071022 100%)}
-    a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:1100px;margin:28px auto;padding:26px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 40px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:#0b1220;margin:0;
+      background:linear-gradient(180deg,#f6f8fb 0%, #eef4ff 100%);
+    }
+    .wrap{max-width:1000px;margin:36px auto;padding:26px;}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#021122}
-    h1{margin:0;font-size:20px}
-    .meta{color:var(--muted);font-size:13px}
+    .top{display:flex;gap:18px;align-items:center;background:white;
+      border-radius:12px;padding:18px;
+      box-shadow:0 8px 24px rgba(15,23,42,0.06);
+    }
+    .photo{width:100px;height:100px;border-radius:12px;overflow:hidden;
+      border:2px solid rgba(11,110,246,0.12);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-    .layout{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:20px}
+    h1{margin:0;font-size:22px}
+    .role{color:var(--muted);margin-top:6px;font-size:14px}
 
-    /* Main column */
-    main{min-width:0}
-    .card{background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    h2{margin:0 0 8px 0;color:#cdefff}
+    .contact{margin-left:auto;text-align:right}
+    .contact a{
+      display:inline-block;margin-left:6px;color:var(--accent);
+      text-decoration:none;font-weight:600;
+    }
+
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:8px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;text-decoration:none;font-weight:700;
+    }
+
+    .layout{
+      display:grid;grid-template-columns:1fr 320px;
+      gap:20px;margin-top:22px;
+    }
+
+    .card{
+      background:var(--card);padding:18px;border-radius:10px;
+      box-shadow:0 8px 24px rgba(15,23,42,0.06);
+      border:1px solid rgba(11,110,246,0.04)
+    }
+    h2{margin:0 0 8px 0;color:#07204b}
     p{color:var(--muted);line-height:1.5;margin:0}
 
     .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .skill{background:var(--glass);padding:8px 10px;border-radius:8px;font-size:13px;color:#dff6ff;border:1px solid rgba(255,255,255,0.03)}
+    .skill{
+      background:var(--glass);padding:8px 10px;border-radius:8px;
+      font-size:13px;color:#05366a;
+      border:1px solid rgba(11,110,246,0.08);
+    }
 
-    .project{margin-bottom:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.05));border:1px solid rgba(255,255,255,0.02)}
-    .project h3{margin:0;font-size:15px}
-    .project p{margin:6px 0 0 0}
-    .tech{font-size:12px;color:var(--muted);margin-top:8px}
+    .project{
+      margin-bottom:14px;padding:12px;border-radius:8px;
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border:1px solid rgba(6,40,80,0.03)
+    }
+    .project h3{margin:0;font-size:16px;color:#05284f}
+    .tech{font-size:13px;color:var(--muted);margin-top:6px}
 
-    /* Sidebar */
-    aside{min-width:0}
-    .contact a{display:block;color:var(--accent);font-weight:600}
-    .cert{margin-bottom:10px}
-    .cert b{display:block;color:#dff6ff}
-    .btn{display:inline-block;padding:10px 12px;border-radius:8px;background:rgba(0,209,255,0.12);border:1px solid rgba(0,209,255,0.18);color:var(--accent);font-weight:700}
+    .meta-list{margin-top:10px}
+    .meta-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+    .icon{
+      width:34px;height:34px;border-radius:8px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:700;
+    }
 
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    footer{
+      margin-top:18px;text-align:center;color:var(--muted);font-size:13px
+    }
 
-    /* Responsive */
-    @media(max-width:980px){.layout{grid-template-columns:1fr}.brand{gap:8px}.logo{width:48px;height:48px}}
+    /* Fade-up animation */
+    .fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
+    .delay-1{animation-delay:0.05s}
+    .delay-2{animation-delay:0.15s}
+    .delay-3{animation-delay:0.25s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    @media(max-width:940px){
+      .layout{grid-template-columns:1fr}
+      .contact{text-align:left;margin-left:0}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">SS</div>
-        <div>
-          <h1>SAI SIVARAMAN B</h1>
-          <div class="meta">B.E. CSE (2028) • Chennai</div>
+
+    <!-- TOP SECTION -->
+    <div class="top fade-up delay-1">
+      <div class="photo">
+        <img src="photo.jpg" alt="Sai Sivaraman">
+      </div>
+
+      <div>
+        <h1>SAI SIVARAMAN B</h1>
+        <div class="role">B.E CSE • Easwari Engineering College (2024–2028)</div>
+        <p style="margin-top:6px;color:var(--muted)">
+          Developer skilled in Java, Python, cloud, networking & security.
+          I build practical and user-focused applications.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div style="font-size:13px;color:var(--muted)">Chennai</div>
+        <div style="margin-top:8px">
+          <a class="btn" href="Sai_Sivaraman_Resume_OnePage.pdf" download>
+            Download Resume
+          </a>
         </div>
       </div>
-      <div style="text-align:right">
-        <div class="meta">9940301164 • <a href="mailto:saisivaraman11@gmail.com">saisivaraman11@gmail.com</a></div>
-        <div style="margin-top:8px"><a class="btn" href="sandbox:/mnt/data/Sai_Sivaraman_Resume_OnePage.pdf" target="_blank">Download Resume</a></div>
-      </div>
-    </header>
+    </div>
 
     <div class="layout">
-      <main>
-        <section class="card">
-          <h2>About</h2>
-          <p>Motivated Computer Science Engineering undergraduate at Easwari Engineering College (2024–2028). Experienced with Java and Python, building web backends and Android modules. Interested in cybersecurity, cloud architecture, and AI-driven solutions. I focus on building usable, reliable software that solves real problems — especially in safety and sustainability.</p>
-        </section>
 
-        <section class="card" style="margin-top:14px">
+      <!-- MAIN LEFT -->
+      <main>
+
+        <section class="card fade-up delay-2">
           <h2>Projects</h2>
 
           <div class="project">
             <h3>Chandra — Women’s Safety Application</h3>
-            <p><strong>Overview:</strong> One-touch SOS, real-time GPS sharing, trusted-contacts alert flow to speed up emergency response.</p>
-            <p class="tech">Role: Designed emergency workflows • Tech: Java (Android), Python, GPS APIs, Firebase</p>
+            <p><strong>Overview:</strong> SOS alerts, location sharing, emergency contacts.</p>
+            <p class="tech"><strong>Tech:</strong> Java, Python, GPS API, Firebase</p>
           </div>
 
           <div class="project">
             <h3>Carbonique — Carbon Footprint Tracker</h3>
-            <p><strong>Overview:</strong> Web app to calculate user carbon emissions and recommend personalized reduction actions.</p>
-            <p class="tech">Role: Built calculation engine & dashboard • Tech: Python, HTML/CSS, Charting libraries</p>
+            <p><strong>Overview:</strong> Tracks emissions & gives reduction tips.</p>
+            <p class="tech"><strong>Tech:</strong> Python, HTML/CSS, Chart.js</p>
           </div>
 
-          <div class="project">
-            <h3>More to add</h3>
-            <p style="margin-top:6px">Want to showcase source code links, screenshots or demo videos? I can add project pages with live links and readme snippets.</p>
-          </div>
         </section>
 
-        <section class="card" style="margin-top:14px">
+        <section class="card fade-up delay-3" style="margin-top:16px">
           <h2>Skills</h2>
           <div class="skills">
             <div class="skill">Java</div>
             <div class="skill">Python</div>
             <div class="skill">SQL</div>
-            <div class="skill">HTML &amp; CSS</div>
-            <div class="skill">Android (basics)</div>
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">Android</div>
             <div class="skill">Networking</div>
-            <div class="skill">AI Fundamentals</div>
-            <div class="skill">Git</div>
+            <div class="skill">AWS Basics</div>
+            <div class="skill">Cybersecurity</div>
+          </div>
+        </section>
+      </main>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside>
+
+        <section class="card fade-up delay-2">
+          <h2>Contact</h2>
+
+          <div class="meta-list">
+            <div class="meta-item">
+              <div class="icon">E</div>
+              <div><strong>Email</strong><br><a href="mailto:saisivaraman11@gmail.com">saisivaraman11@gmail.com</a></div>
+            </div>
+
+            <div class="meta-item">
+              <div class="icon">L</div>
+              <div><strong>LinkedIn</strong><br>
+                <a href="https://www.linkedin.com/in/sai-sivaraman-b-39914b328" target="_blank">
+                  linkedin.com/in/sai-sivaraman-b-39914b328
+                </a>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <div class="icon">G</div>
+              <div><strong>GitHub</strong><br>
+                <a href="https://github.com/sai110906" target="_blank">github.com/sai110906</a>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <div class="icon">P</div>
+              <div><strong>Phone</strong><br>+91 99403 01164</div>
+            </div>
           </div>
         </section>
 
-      </main>
-
-      <aside>
-        <div class="card contact">
-          <h2>Contact</h2>
-          <a href="mailto:saisivaraman11@gmail.com">saisivaraman11@gmail.com</a>
-          <a href="tel:9940301164">+91 99403 01164</a>
-          <p style="margin-top:8px;color:var(--muted)">LinkedIn: <a href="https://www.linkedin.com/in/sai-sivaraman-b-39914b328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">View Profile</a></p>
-        </div>
-
-        <div class="card" style="margin-top:14px">
+        <section class="card fade-up delay-3" style="margin-top:16px">
           <h2>Certifications</h2>
-          <div class="cert"><b>Infosys — Core Java Programming Revisited (2025)</b><div class="meta">OOP, collections, multithreading, exception handling, and Java best practices.</div></div>
-          <div class="cert"><b>Cisco — Python Essentials 1 (2024)</b><div class="meta">Python fundamentals: functions, control flow, modules and debugging.</div></div>
-          <div class="cert"><b>Cisco — Networking Basics (2024)</b><div class="meta">IP addressing, routing, switching and troubleshooting basics.</div></div>
-          <div class="cert"><b>NPTEL (IIT Kharagpur) — Ethical Hacking (Elite, 2025)</b><div class="meta">Vulnerability assessment, reconnaissance and defensive security techniques.</div></div>
-          <div class="cert"><b>Deloitte Forage — Cybersecurity Simulation (2025)</b><div class="meta">Hands-on incident response and threat analysis tasks.</div></div>
-          <div class="cert"><b>AWS Forage — Solutions Architecture (2025)</b><div class="meta">Designing scalable AWS architectures: VPC, load balancing, fault tolerance.</div></div>
-        </div>
 
-        <div class="card" style="margin-top:14px">
-          <h2>Resume</h2>
-          <a class="btn" href="sandbox:/mnt/data/Sai_Sivaraman_Resume_OnePage.pdf" target="_blank">Download PDF Resume</a>
-        </div>
+          <div class="cert"><b>Infosys – Core Java Programming</b>
+            <p>OOP, collections, multithreading.</p>
+          </div>
+
+          <div class="cert"><b>Cisco – Python Essentials</b>
+            <p>Python scripting & debugging.</p>
+          </div>
+
+          <div class="cert"><b>NPTEL – Ethical Hacking (Elite)</b>
+            <p>Vulnerability analysis & security methods.</p>
+          </div>
+
+          <div class="cert"><b>AWS Forage – Solutions Architecture</b>
+            <p>VPC, load balancing, scaling.</p>
+          </div>
+        </section>
 
       </aside>
     </div>
 
     <footer>
-      <div style="color:var(--muted)">Built &amp; curated by Sai Sivaraman • Portfolio generated with ChatGPT</div>
+      © 2025 Sai Sivaraman — Portfolio for placements & internships.
     </footer>
-  </div>
 
+  </div>
 </body>
 </html>
